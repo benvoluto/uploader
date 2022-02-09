@@ -1,0 +1,214 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --font-base-size: 16px;
+  --font-base-family: sans-serif;
+  --color-error-text: rgb(237, 11, 52);
+  --color-error-background: rgb(255, 230, 232);
+  --color-error-mid: rgb(251, 155, 164);
+  --color-helper-text: rgb(0, 164, 76);
+  --color-info: rgb(33, 150, 243);
+  --color-info-dark: rgb(0, 61, 109);
+  --color-text: rgb(255,255,255);
+  --color-hint-text: rgb(113, 137, 159);
+  --color-secondary: rgb(198, 211, 222);
+  --color-secondary-dark: rgb(113, 137, 159);
+  --color-fieldset-text: rgb(113, 137, 159);
+  --color-fieldset-background: rgb(255,255,255);
+  --color-shadow: rgba(0, 0, 0, 0.5);
+  --color-brand-primary: rgb(52, 33, 86);
+  --color-brand-gradient: rgb(40, 22, 71);
+}
+
+::placeholder {
+color: rgb(212, 223, 230);
+font-size: .7em;
+}
+
+.kh-link {
+  text-decoration: none;
+  color: var(--color-info);
+}
+.kh-link:hover {
+  color: var(--color-info-dark);
+}
+.kh-button {
+  text-decoration: none;
+  border: 1px solid var(--color-info);
+  color: var(--color-text);
+  background-color: var(--color-info);
+  border-radius: .2em;
+  font-size: 1em;
+  padding: .3em .8em;
+}
+
+.kh-page {
+  background-image: linear-gradient(0deg, var(--color-brand-primary) 0px, var(--color-brand-gradient));
+  color: var(--color-text);
+  font-size: var(--font-base-size);
+  font-family: var(--font-base-family);
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.kh-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2em;
+  max-width: 32em;
+}
+.kh-branding {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5em;
+}
+.kh-page-title {
+  font-size: 1.6em;
+  font-weight: normal;
+  line-height: 1.2em;
+  width: 100%;
+  margin: 0;
+  padding: 0 0 0.5em 0;
+  text-align: left;
+  color: var(--color-brand-primary);
+}
+.kh-fieldset {
+  margin: 1em 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-fieldset-text);
+  background-color: var(--color-fieldset-background);
+  padding: 2.5em;
+  border-radius: 1em;
+  border: 1px solid var(--color-secondary);
+  box-shadow: 0 0.5em 1em var(--color-shadow);
+}
+.kh-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  padding: .5em 0;
+}
+.kh-field-inline {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding: .5em 0;
+}
+
+.kh-legend {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 1em 0;
+  padding: 0;
+  width: 100%;
+  vertical-align: baseline;
+}
+.kh-legend-text {
+  font-size: .8em;
+}
+.kh-field-label {
+  text-align: left;
+  width: 100%;
+  font-size: 1em;
+  margin-bottom: .3em;
+}
+.kh-field-inline .kh-field-label {
+  text-align: left;
+  width: auto;
+  font-size: 1em;
+  margin: 0 1em .3em 0;
+}
+.kh-field-input {
+  border: 1px solid var(--color-secondary-dark);
+  border-radius: 0;
+  padding: .6em;
+  width: 100%;
+  background-color: transparent;
+  border-style: solid;
+  border-width: 0 0 1px 0;
+  font-size: 1.2em;
+}
+.kh-field-input[type="file"] {
+  border-width: 0 0 0 0;
+}
+.kh-field-inline .kh-field-input {
+  padding-left: 0;
+}
+
+.kh-helper {
+  display: inline-block;
+  visibility: visible;
+  width: 100%;    
+  padding: .3em 0;
+}
+.kh-helper-text {
+  display: inline-block;
+  font-size: .8em;
+  color: var(--color-helper-text);
+  width: 100%;
+}
+.kh-field .kh-helper-text {
+  color: var(--color-hint-text);
+  font-size: .7em;
+}
+.kh-helper-form-error {
+  margin-top: .7em;
+  padding: .5em;
+  border: 1px solid var(--color-error-mid);
+  border-radius: .3em;
+  display: none;
+}
+.kh-helper-form-error .kh-helper-text {
+  color: var(--color-error-text);
+}
+.kh-field .kh-helper-error .kh-helper-text {
+  color: var(--color-error-text);
+}
+.kh-helper {
+  visibility: hidden;
+}
+.kh-field-input:focus + .kh-helper-hint {
+  visibility: visible;
+}
+.kh-fieldset-action {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.kh-help {
+  padding: .5em;
+}
+.kh-text {
+  display: inline-block;
+  padding: 2em;
+  font-size: 1em;
+  color: var(--color-text);
+  text-align: center;
+}
+.kh-help .kh-link {
+  font-size: .8em;
+}
+.kh-text .kh-link {
+  color: var(--color-secondary);
+}
